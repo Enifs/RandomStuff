@@ -7,11 +7,24 @@ import org.neo4j.graphdb.Transaction;
 
 public class Neo4jInterface
 {
-	public Neo4jInterface()
+	// ----------------------------------------------------------------------------
+	// Section: Constructors
+	// ----------------------------------------------------------------------------
+	public Neo4jInterface(String path)
 	{
-		this.graphDb = this.embeddedNeo4j.getGraphDb();
+		this.neoShell = new Neo4JShell(path);
+		this.graphDb = this.neoShell.getGraphDb();
 	}
 
+	public Neo4jInterface()
+	{
+		this.neoShell = new Neo4JShell();
+		this.graphDb = this.neoShell.getGraphDb();
+	}
+
+	// ----------------------------------------------------------------------------
+	// Section: Other methods
+	// ----------------------------------------------------------------------------
 	public void addNode(String key)
 	{
 		try (Transaction tx = graphDb.beginTx())
@@ -40,17 +53,20 @@ public class Neo4jInterface
         return graphDb;
     }
 
-    public void disconnect ()
+    public void shutDown ()
     {
-        this.embeddedNeo4j.shutDown();
+        this.neoShell.shutDown();
     }
 
     public void clearDb ()
     {
-        this.embeddedNeo4j.clearDb();
+        this.neoShell.clearDb();
     }
 
-    private GraphDatabaseService graphDb;
-	private EmbeddedNeo4j embeddedNeo4j = new EmbeddedNeo4j();
+	// ----------------------------------------------------------------------------
+	// Section: Instance fields
+	// ----------------------------------------------------------------------------
 
+    private GraphDatabaseService graphDb;
+	private Neo4JShell neoShell;
 }

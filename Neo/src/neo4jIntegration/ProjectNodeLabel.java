@@ -1,10 +1,7 @@
-package neo4jIntegration;//
-// Tom Sawyer Software
-// Copyright 1992 - 2013
-// All rights reserved.
-//
-// www.tomsawyer.com
-//
+/**
+ * Created by Enifs.
+ */
+package neo4jIntegration;
 
 import org.neo4j.graphdb.Label;
 

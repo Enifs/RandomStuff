@@ -4,8 +4,14 @@
     <list default="true" id="c1c89fd7-be59-4bc2-8501-2eee0c0e9fbf" name="Default" comment="" />
     <ignored path="RandomStuff.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/TestApplication.java" changelist="c1c89fd7-be59-4bc2-8501-2eee0c0e9fbf" time="1384119789189" ignored="false" />
+    <file path="/TestApplication.java" changelist="c1c89fd7-be59-4bc2-8501-2eee0c0e9fbf" time="1384214454793" ignored="false" />
     <file path="/fragment.java" changelist="c1c89fd7-be59-4bc2-8501-2eee0c0e9fbf" time="1384125312556" ignored="false" />
+    <file path="/Neo4JShell.java" changelist="c1c89fd7-be59-4bc2-8501-2eee0c0e9fbf" time="1384215024420" ignored="false" />
+    <file path="/Neo4jInterface.java" changelist="c1c89fd7-be59-4bc2-8501-2eee0c0e9fbf" time="1384213198144" ignored="false" />
+    <file path="/ProjectNodeLabel.java" changelist="c1c89fd7-be59-4bc2-8501-2eee0c0e9fbf" time="1384213568273" ignored="false" />
+    <file path="/NeoUI.java" changelist="c1c89fd7-be59-4bc2-8501-2eee0c0e9fbf" time="1384213619586" ignored="false" />
+    <file path="/Debug.java" changelist="c1c89fd7-be59-4bc2-8501-2eee0c0e9fbf" time="1384215225575" ignored="false" />
+    <file path="/DebugLevel.java" changelist="c1c89fd7-be59-4bc2-8501-2eee0c0e9fbf" time="1384213911355" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,10 +75,8 @@
       <file leaf-file-name="TestApplication.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HelloWorld/src/TestApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="docComment;class#TestApplication#0" expanded="false" />
-              </folding>
+            <state line="21" column="78" selection-start="808" selection-end="808" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -80,16 +84,16 @@
       <file leaf-file-name="Application.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Neo/src/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="70" selection-start="429" selection-end="429" vertical-scroll-proportion="0.0">
+            <state line="29" column="0" selection-start="606" selection-end="606" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DefaultLabel.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="DefaultLabel.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Neo/src/neo4jIntegration/DefaultLabel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="13" selection-start="101" selection-end="101" vertical-scroll-proportion="0.19833334">
+            <state line="7" column="13" selection-start="101" selection-end="101" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -98,16 +102,16 @@
       <file leaf-file-name="ProjectNodeLabel.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Neo/src/neo4jIntegration/ProjectNodeLabel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="13" selection-start="174" selection-end="174" vertical-scroll-proportion="0.0">
+            <state line="1" column="20" selection-start="24" selection-end="24" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EmbeddedNeo4j.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Neo/src/neo4jIntegration/EmbeddedNeo4j.java">
+      <file leaf-file-name="Neo4jInterface.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Neo/src/neo4jIntegration/Neo4jInterface.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="46" selection-start="971" selection-end="971" vertical-scroll-proportion="0.0">
+            <state line="7" column="20" selection-start="203" selection-end="203" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -116,7 +120,27 @@
       <file leaf-file-name="NeoUI.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Neo/src/ui/NeoUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="99" column="57" selection-start="2181" selection-end="2181" vertical-scroll-proportion="0.0">
+            <state line="140" column="18" selection-start="3115" selection-end="3115" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Debug.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Debug/src/debug/Debug.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="58" selection-start="386" selection-end="386" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Neo4JShell.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Neo/src/neo4jIntegration/Neo4JShell.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="111" column="69" selection-start="2985" selection-end="2985" vertical-scroll-proportion="1.3699732">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -134,9 +158,16 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/HelloWorld/src/TestApplication.java" />
+        <option value="$PROJECT_DIR$/Neo/src/neo4jIntegration/EmbeddedNeo4j.java" />
+        <option value="$PROJECT_DIR$/Neo/src/neo4jIntegration/Neo4jInterface.java" />
         <option value="$PROJECT_DIR$/Neo/src/Application.java" />
+        <option value="$PROJECT_DIR$/Neo/src/neo4jIntegration/ProjectNodeLabel.java" />
         <option value="$PROJECT_DIR$/Neo/src/ui/NeoUI.java" />
+        <option value="$PROJECT_DIR$/Debug/src/DebugLevel.java" />
+        <option value="$PROJECT_DIR$/Debug/src/Debug.java" />
+        <option value="$PROJECT_DIR$/HelloWorld/src/TestApplication.java" />
+        <option value="$PROJECT_DIR$/Neo/src/neo4jIntegration/Neo4JShell.java" />
+        <option value="$PROJECT_DIR$/Debug/src/debug/Debug.java" />
       </list>
     </option>
   </component>
@@ -157,7 +188,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectReloadState">
-    <option name="STATE" value="2" />
+    <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
@@ -172,6 +203,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -182,8 +215,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -198,6 +229,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="FullScreen" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="dynamic.classpath" value="false" />
@@ -383,27 +415,27 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="54" y="-8" width="1234" height="784" extended-state="7" />
+    <frame x="54" y="-8" width="1234" height="784" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.6709265" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.6709265" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -473,19 +505,31 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/HelloWorld/src/TestApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HelloWorld/src/TestApplication.java">
+    <entry file="file://$PROJECT_DIR$/Neo/src/Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="docComment;class#TestApplication#0" expanded="false" />
-          </folding>
+        <state line="18" column="70" selection-start="429" selection-end="429" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Neo/src/neo4jIntegration/DefaultLabel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="13" selection-start="101" selection-end="101" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Neo/src/neo4jIntegration/ProjectNodeLabel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="13" selection-start="174" selection-end="174" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
@@ -498,31 +542,75 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Neo/src/neo4jIntegration/EmbeddedNeo4j.java">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="46" selection-start="971" selection-end="971" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Neo/src/neo4jIntegration/DefaultLabel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="13" selection-start="101" selection-end="101" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Neo/src/Application.java">
+    <entry file="file://$PROJECT_DIR$/Neo/src/neo4jIntegration/databaseCommands/AddNodeCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="70" selection-start="429" selection-end="429" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Neo/src/neo4jIntegration/Neo4jInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="20" selection-start="203" selection-end="203" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Neo/src/neo4jIntegration/ProjectNodeLabel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="13" selection-start="174" selection-end="174" vertical-scroll-proportion="0.0">
+        <state line="1" column="20" selection-start="24" selection-end="24" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Neo/src/neo4jIntegration/DefaultLabel.java">
+    <entry file="file://$PROJECT_DIR$/Neo/src/Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="13" selection-start="101" selection-end="101" vertical-scroll-proportion="0.19833334">
+        <state line="29" column="0" selection-start="606" selection-end="606" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Neo/src/ui/NeoUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="140" column="18" selection-start="3115" selection-end="3115" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HelloWorld/src/TestApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="78" selection-start="808" selection-end="808" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Debug/src/debug/Debug.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="58" selection-start="386" selection-end="386" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Neo/src/neo4jIntegration/Neo4JShell.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="111" column="69" selection-start="2985" selection-end="2985" vertical-scroll-proportion="1.3699732">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

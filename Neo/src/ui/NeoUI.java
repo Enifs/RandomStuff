@@ -109,31 +109,27 @@ public class NeoUI
             @Override
             public void mouseClicked (MouseEvent e)
             {
-                neo4jInterface.disconnect();
+                neo4jInterface.shutDown();
             }
 
             @Override
             public void mousePressed (MouseEvent e)
             {
-                //To change body of implemented methods use File | Settings | File Templates.
             }
 
             @Override
             public void mouseReleased (MouseEvent e)
             {
-                //To change body of implemented methods use File | Settings | File Templates.
             }
 
             @Override
             public void mouseEntered (MouseEvent e)
             {
-                //To change body of implemented methods use File | Settings | File Templates.
             }
 
             @Override
             public void mouseExited (MouseEvent e)
             {
-                //To change body of implemented methods use File | Settings | File Templates.
             }
         });
         this.clearDatabaseButton.addMouseListener(new MouseListener()
@@ -142,7 +138,7 @@ public class NeoUI
             public void mouseClicked (MouseEvent e)
             {
                 neo4jInterface.clearDb();
-				System.out.println("Database cleared.");
+				//System.out.println("Database cleared.");
 			}
 
             @Override
