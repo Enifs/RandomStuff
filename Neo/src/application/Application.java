@@ -1,5 +1,7 @@
+package application;
+
 import neo4jIntegration.Neo4jInterface;
-import ui.NeoUI;
+import application.ui.NeoUI;
 
 import javax.swing.*;
 import java.awt.*;

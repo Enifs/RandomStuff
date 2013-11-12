@@ -1,4 +1,4 @@
-package ui;
+package application.ui;
 
 import neo4jIntegration.DefaultLabel;
 import neo4jIntegration.Neo4jInterface;
