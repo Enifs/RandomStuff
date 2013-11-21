@@ -37,8 +37,6 @@ public class NeoUI
 								neo4jInterface.getGraphDb());
 
 				addRelCommand.execute();
-
-				System.out.println("Added a relationship.");
 			}
 
 
@@ -76,8 +74,6 @@ public class NeoUI
                 AddNodeCommand command =
                         new AddNodeCommand(property, new DefaultLabel(), neo4jInterface);
 			    command.execute();
-
-				System.out.println("Added a node.");
             }
 
 
@@ -138,31 +134,26 @@ public class NeoUI
             public void mouseClicked (MouseEvent e)
             {
                 neo4jInterface.clearDb();
-				//System.out.println("Database cleared.");
 			}
 
             @Override
             public void mousePressed (MouseEvent e)
             {
-                //To change body of implemented methods use File | Settings | File Templates.
             }
 
             @Override
             public void mouseReleased (MouseEvent e)
             {
-                //To change body of implemented methods use File | Settings | File Templates.
             }
 
             @Override
             public void mouseEntered (MouseEvent e)
             {
-                //To change body of implemented methods use File | Settings | File Templates.
             }
 
             @Override
             public void mouseExited (MouseEvent e)
             {
-                //To change body of implemented methods use File | Settings | File Templates.
             }
         });
 	}

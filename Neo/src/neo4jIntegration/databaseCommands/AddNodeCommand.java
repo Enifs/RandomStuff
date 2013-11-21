@@ -1,5 +1,6 @@
 package neo4jIntegration.databaseCommands;
 
+import debug.Debug;
 import neo4jIntegration.Neo4jInterface;
 import neo4jIntegration.Neo4jProperty;
 import neo4jIntegration.ProjectNodeLabel;
@@ -93,6 +94,8 @@ public class AddNodeCommand implements Neo4jCommand
 
             tx.success();
         }
+
+		Debug.println("Add node[id = " + this.nodeID + "] executed.");
 		return null;
 	}
 

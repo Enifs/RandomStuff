@@ -4,6 +4,7 @@
 
 package neo4jIntegration.databaseCommands;
 
+import debug.Debug;
 import org.neo4j.graphdb.*;
 
 public class AddRelationshipCommand implements Neo4jCommand
@@ -48,7 +49,7 @@ public class AddRelationshipCommand implements Neo4jCommand
     @Override
     public void init ()
     {
-
+		// Nothing to do here.
     }
 
     @Override
@@ -61,6 +62,8 @@ public class AddRelationshipCommand implements Neo4jCommand
 			this.idObtained = true;
 			tx.success();
 		}
+
+		Debug.println("Add relationship[id = " + this.relationshipID + "] executed.");
 		return null;
 	}
     // ----------------------------------------------------------------------------

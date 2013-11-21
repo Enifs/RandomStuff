@@ -3,6 +3,7 @@
  */
 package neo4jIntegration.databaseCommands;
 
+import debug.Debug;
 import neo4jIntegration.DefaultLabel;
 import org.neo4j.graphdb.*;
 
@@ -64,6 +65,7 @@ public class RetrieveNodeCommand implements Neo4jCommand
 			}
 		}
 
+		Debug.println("Node[id = " + node.getId() + ";mode = " + this.mode.name() + "] retrieved.");
 		return node;
 	}
 

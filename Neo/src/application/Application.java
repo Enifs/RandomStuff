@@ -1,5 +1,6 @@
 package application;
 
+import debug.Debug;
 import neo4jIntegration.Neo4jInterface;
 import application.ui.NeoUI;
 
@@ -19,11 +20,15 @@ public class Application extends JFrame
 		getContentPane().add(ui.getMainPanel());
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);
+
+		Debug.println("Application initialized.");
 	}
 
 
 	public static void main(String[] args)
 	{
+		Debug.println("Application entry point.");
+
 		Application application = new Application();
 	}
 
