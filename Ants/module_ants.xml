@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_ants" default="compile.module.ants">
+  <dirname property="module.ants.basedir" file="${ant.file.module_ants}"/>
+  
+  <property name="module.jdk.home.ants" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.ants" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.ants" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.ants" value="${compiler.args}"/>
+  
+  <property name="ants.output.dir" value="${module.ants.basedir}/out/production/Ants"/>
+  <property name="ants.testoutput.dir" value="${module.ants.basedir}/out/test/Ants"/>
+  
+  <path id="ants.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="ants.module.production.classpath">
+    <path refid="${module.jdk.classpath.ants}"/>
+  </path>
+  
+  <path id="ants.runtime.production.module.classpath">
+    <pathelement location="${ants.output.dir}"/>
+  </path>
+  
+  <path id="ants.module.classpath">
+    <path refid="${module.jdk.classpath.ants}"/>
+    <pathelement location="${ants.output.dir}"/>
+  </path>
+  
+  <path id="ants.runtime.module.classpath">
+    <pathelement location="${ants.testoutput.dir}"/>
+    <pathelement location="${ants.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.ants">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.ants">
+    <patternset refid="excluded.from.module.ants"/>
+  </patternset>
+  
+  <path id="ants.module.sourcepath">
+    <dirset dir="${module.ants.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.ants" depends="compile.module.ants.production,compile.module.ants.tests" description="Compile module Ants"/>
+  
+  <target name="compile.module.ants.production" depends="register.custom.compilers" description="Compile module Ants; production classes">
+    <mkdir dir="${ants.output.dir}"/>
+    <javac2 destdir="${ants.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.ants}/javac">
+      <compilerarg line="${compiler.args.ants}"/>
+      <bootclasspath refid="ants.module.bootclasspath"/>
+      <classpath refid="ants.module.production.classpath"/>
+      <src refid="ants.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.ants"/>
+    </javac2>
+    
+    <copy todir="${ants.output.dir}">
+      <fileset dir="${module.ants.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.ants.tests" depends="register.custom.compilers,compile.module.ants.production" description="compile module Ants; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.ants" description="cleanup module">
+    <delete dir="${ants.output.dir}"/>
+    <delete dir="${ants.testoutput.dir}"/>
+  </target>
+</project>

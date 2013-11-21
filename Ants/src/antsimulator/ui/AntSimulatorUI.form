@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="antsimulator.ui.AntSimulatorUI">
+  <grid id="27dc6" binding="mainPanel" layout-manager="GridLayoutManager" row-count="2" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="34" width="564" height="469"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <grid id="aa4e1" binding="farmWrapper" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="7" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <minimum-size width="400" height="400"/>
+            <preferred-size width="200" height="200"/>
+          </grid>
+        </constraints>
+        <properties/>
+        <border type="bevel-lowered" title="Farm">
+          <font/>
+          <title-color color="-16777216"/>
+          <color color="-13434829"/>
+        </border>
+        <children>
+          <grid id="5678a" binding="farmCanvas" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-3342388"/>
+            </properties>
+            <border type="none"/>
+            <children/>
+          </grid>
+        </children>
+      </grid>
+      <grid id="bd433" layout-manager="GridLayoutManager" row-count="6" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="0" anchor="8" fill="2" indent="0" use-parent-layout="false">
+            <minimum-size width="150" height="400"/>
+            <preferred-size width="150" height="400"/>
+          </grid>
+        </constraints>
+        <properties/>
+        <border type="bevel-raised" title="Control Panel"/>
+        <children>
+          <component id="4cdb8" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <labelFor value="6964c"/>
+              <text value="Ants per Hive"/>
+            </properties>
+          </component>
+          <vspacer id="9acb0">
+            <constraints>
+              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+            </constraints>
+          </vspacer>
+          <component id="fc677" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <labelFor value="2c51f"/>
+              <text value="Number of Hives"/>
+            </properties>
+          </component>
+          <component id="2c51f" class="javax.swing.JTextField" binding="numberOfHivesTextField">
+            <constraints>
+              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="40" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <text value="1"/>
+            </properties>
+          </component>
+          <component id="6964c" class="javax.swing.JTextField" binding="antsPerHiveTextField">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                <minimum-size width="40" height="20"/>
+                <preferred-size width="40" height="20"/>
+                <maximum-size width="40" height="20"/>
+              </grid>
+            </constraints>
+            <properties>
+              <text value="20"/>
+            </properties>
+          </component>
+          <component id="29cc2" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <labelFor value="5008"/>
+              <text value="Food bits"/>
+            </properties>
+          </component>
+          <component id="5008" class="javax.swing.JTextField" binding="foodBitsTextField" default-binding="true">
+            <constraints>
+              <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="40" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <text value="1"/>
+            </properties>
+          </component>
+          <component id="db378" class="javax.swing.JButton" binding="stopButton" default-binding="true">
+            <constraints>
+              <grid row="4" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                <minimum-size width="80" height="-1"/>
+                <preferred-size width="80" height="-1"/>
+                <maximum-size width="80" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <enabled value="true"/>
+              <text value="Stop"/>
+            </properties>
+          </component>
+          <component id="c7f67" class="javax.swing.JButton" binding="startButton" default-binding="true">
+            <constraints>
+              <grid row="5" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                <minimum-size width="80" height="-1"/>
+                <preferred-size width="80" height="-1"/>
+                <maximum-size width="80" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <text value="Start!"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="90f28" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="1" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <minimum-size width="-1" height="20"/>
+            <preferred-size width="-1" height="20"/>
+            <maximum-size width="-1" height="20"/>
+          </grid>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="6f564" class="javax.swing.JLabel" binding="cursorCoordinates">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+                <preferred-size width="50" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <horizontalAlignment value="0"/>
+              <horizontalTextPosition value="0"/>
+              <text value="200:200"/>
+            </properties>
+          </component>
+          <component id="2ec9c" class="javax.swing.JLabel" binding="statusBar">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="400" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <horizontalAlignment value="4"/>
+              <text value="Status"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+    </children>
+  </grid>
+</form>
