@@ -8,7 +8,6 @@ import org.neo4j.graphdb.Node;
 import org.neo4j.graphdb.Relationship;
 import org.neo4j.graphdb.Transaction;
 import org.neo4j.graphdb.factory.GraphDatabaseFactory;
-import debug.Debug;
 
 public class Neo4JShell
 {
@@ -25,7 +24,7 @@ public class Neo4JShell
 		this.graphDb = new GraphDatabaseFactory().newEmbeddedDatabase(path);
 		this.registerShutdownHook(graphDb);
 
-		Debug.println("Connected to Neo4j database at : " + path + "");
+//		Debug.println("Connected to Neo4j database at : " + path + "");
 	}
 
 
@@ -66,7 +65,7 @@ public class Neo4JShell
 			{
 				graphDb.shutdown();
 
-				Debug.println("Database shutdown happened via the shutdown hook.");
+//				Debug.println("Database shutdown happened via the shutdown hook.");
 			}
 		});
 
@@ -77,7 +76,7 @@ public class Neo4JShell
 	{
 		this.graphDb.shutdown();
 
-		Debug.println("Database shutdown happened.");
+//		Debug.println("Database shutdown happened.");
 	}
 
 
@@ -99,7 +98,7 @@ public class Neo4JShell
 			}
 			tx.success();
 
-			Debug.println("Database cleared via Neo4JShell.clearDb");
+//			Debug.println("Database cleared via Neo4JShell.clearDb");
 		}
 
 	}

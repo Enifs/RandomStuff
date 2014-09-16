@@ -1,5 +1,3 @@
-import debug.Debug;
-
 /**
  * Created by Enifs
  */
@@ -19,7 +17,7 @@ public class TestApplication
     // ----------------------------------------------------------------------------
 	public static void main(String[] args)
 	{
-		System.out.println("debug.Debug mode set to: " + Debug.getDebugMode() + ".");
+//		System.out.println("debug.Debug mode set to: " + Debug.getDebugMode() + ".");
 		System.out.println("The project works just fine!");
 	}
 	// ----------------------------------------------------------------------------
