@@ -8,6 +8,10 @@ import java.util.ArrayList;
 
 public class Graph
 {
-    ArrayList<Node> nodes = new ArrayList<Node>(32);
-    ArrayList<Edge> edges = new ArrayList<Edge>(32);
+    public Graph()
+    {
+    }
+
+    protected ArrayList<Node> nodes = new ArrayList<Node>(32);
+    protected ArrayList<Edge> edges = new ArrayList<Edge>(32);
 }

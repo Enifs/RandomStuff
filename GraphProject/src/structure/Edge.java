@@ -4,8 +4,14 @@
 
 package structure;
 
-public class Edge
+public class Edge<T1, T2>
 {
-    protected Node source;
-    protected Node target;
+    public Edge(Node<T1> source, Node<T2> target)
+    {
+        this.source = source;
+        this.target = target;
+    }
+
+    protected Node<T1> source;
+    protected Node<T2> target;
 }
