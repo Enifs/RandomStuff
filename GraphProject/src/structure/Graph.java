@@ -6,32 +6,34 @@ package structure;
 
 import java.util.ArrayList;
 
-public class Graph
+public class Graph<T>
 {
     public Graph()
     {
     }
 
-    public void addNode(Node node)
+    public Node<T> addNode(T content)
     {
-        this.nodes.add(node);
+        Node<T> returnNode = new Node<T>(content);
+        this.nodes.add(returnNode);
+        return returnNode;
     }
 
-    public <T1, T2> void addEdge(Node<T1> source, Node<T2> target)
+    public void addEdge(Node<T> source, Node<T> target)
     {
-        this.edges.add(new Edge<T1, T2>(source, target));
+        this.edges.add(new Edge<T>(source, target));
     }
 
-    public ArrayList<Node> getNodes()
+    public ArrayList<Node<T>> getNodes()
     {
         return nodes;
     }
 
-    public ArrayList<Edge> getEdges()
+    public ArrayList<Edge<T>> getEdges()
     {
         return edges;
     }
 
-    protected ArrayList<Node> nodes = new ArrayList<Node>(32);
-    protected ArrayList<Edge> edges = new ArrayList<Edge>(32);
+    protected ArrayList<Node<T>> nodes = new ArrayList<Node<T>>(32);
+    protected ArrayList<Edge<T>> edges = new ArrayList<Edge<T>>(32);
 }

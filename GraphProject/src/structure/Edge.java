@@ -4,24 +4,24 @@
 
 package structure;
 
-public class Edge<T1, T2>
+public class Edge<T>
 {
-    public Edge(Node<T1> source, Node<T2> target)
+    public Edge(Node<T> source, Node<T> target)
     {
         this.source = source;
         this.target = target;
     }
 
-    public Node<T1> getSource()
+    public Node<T> getSource()
     {
         return source;
     }
 
-    public Node<T2> getTarget()
+    public Node<T> getTarget()
     {
         return target;
     }
 
-    protected Node<T1> source;
-    protected Node<T2> target;
+    protected Node<T> source;
+    protected Node<T> target;
 }

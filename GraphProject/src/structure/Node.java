@@ -6,7 +6,7 @@ package structure;
 
 public class Node<T>
 {
-    public Node(T content)
+    protected Node(T content)
     {
         this.content = content;
     }
