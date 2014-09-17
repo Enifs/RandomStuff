@@ -14,14 +14,19 @@ public class Graph<T>
 
     public Node<T> addNode(T content)
     {
-        Node<T> returnNode = new Node<T>(content);
+        Node<T> returnNode = new Node<T>(content, this);
         this.nodes.add(returnNode);
         return returnNode;
     }
 
-    public void addEdge(Node<T> source, Node<T> target)
+    public Edge<T> addEdge(Node<T> source, Node<T> target)
     {
-        this.edges.add(new Edge<T>(source, target));
+        Edge<T> returnEdge = new Edge<T>(source, target);
+        this.edges.add(returnEdge);
+        source.outEdges.add(returnEdge);
+        target.inEdges.add(returnEdge);
+
+        return returnEdge;
     }
 
     public ArrayList<Node<T>> getNodes()
