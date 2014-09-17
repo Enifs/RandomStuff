@@ -11,5 +11,10 @@ public class Node<T>
         this.content = content;
     }
 
+    public T getContent()
+    {
+        return this.content;
+    }
+
     protected T content;
 }

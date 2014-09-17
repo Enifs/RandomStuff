@@ -12,6 +12,16 @@ public class Edge<T1, T2>
         this.target = target;
     }
 
+    public Node<T1> getSource()
+    {
+        return source;
+    }
+
+    public Node<T2> getTarget()
+    {
+        return target;
+    }
+
     protected Node<T1> source;
     protected Node<T2> target;
 }
