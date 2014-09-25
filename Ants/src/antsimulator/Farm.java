@@ -1,6 +1,7 @@
 /**
  * Created by Enifs
  */
+
 package antsimulator;
 
 import javax.swing.*;
@@ -9,11 +10,13 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Random;
 
+
 public class Farm implements Runnable
 {
-    // ----------------------------------------------------------------------------
-    // Section: Constructors 
-    // ----------------------------------------------------------------------------
+	// ----------------------------------------------------------------------------
+	// Section: Constructors
+	// ----------------------------------------------------------------------------
+
 
 	public Farm(JPanel associatedCanvas, int numberOfAnts)
 	{
@@ -23,14 +26,14 @@ public class Farm implements Runnable
 
 		for (int i = 0; i < numberOfAnts; i++)
 		{
-			this.ants.add(new Ant(new Point(this.hive), this));
+			this.ants.add(new Ant(new Point(this.hive)));
 		}
 
 	}
 
 	// ----------------------------------------------------------------------------
-    // Section: Getters and Setters 
-    // ----------------------------------------------------------------------------
+	// Section: Getters and Setters
+	// ----------------------------------------------------------------------------
 
 
 	public int getTime()
@@ -44,13 +47,13 @@ public class Farm implements Runnable
 		Farm.goOn = goOn;
 	}
 
+
 	// ----------------------------------------------------------------------------
-    // Section: Other methods 
-    // ----------------------------------------------------------------------------
-    public void drawOval(int x, int y, int w, int h)
+	// Section: Other methods
+	// ----------------------------------------------------------------------------
+	public void drawOval(int x, int y, int w, int h)
 	{
 		this.associatedCanvas.getGraphics().fillOval(x, y, w, h);
-
 	}
 
 
@@ -74,6 +77,7 @@ public class Farm implements Runnable
 				4);
 	}
 
+
 	private void drawHive(int x, int y)
 	{
 		Graphics g = this.associatedCanvas.getGraphics();
@@ -87,9 +91,10 @@ public class Farm implements Runnable
 	{
 		Graphics g = this.associatedCanvas.getGraphics();
 
-		g.setColor(new Color(255,150,160));
+		g.setColor(new Color(255, 150, 160));
 		g.fillRect(x - 5, y - 5, 10, 10);
 	}
+
 
 	private void drawFeramon()
 	{
@@ -102,6 +107,7 @@ public class Farm implements Runnable
 			g.fillOval(point.x - 1, point.y - 1, 2, 2);
 		}
 	}
+
 
 	public void antActions()
 	{
@@ -140,20 +146,21 @@ public class Farm implements Runnable
 		}
 	}
 
+
 	private RelativeDirection searchDecision(HashMap<RelativeDirection, Point> goToCells)
 	{
 		RelativeDirection direction = RelativeDirection.FORWARD;
 
-
 		return null;
 	}
 
+
 	public void go() throws InterruptedException
 	{
-	 	while(Farm.goOn)
+		while (Farm.goOn)
 		{
 			Graphics g = this.associatedCanvas.getGraphics();
-			g.setColor(new Color(204,255,204));
+			g.setColor(new Color(204, 255, 204));
 			g.fillRect(0, 0, 400, 400);
 
 			this.antActions();
@@ -166,8 +173,8 @@ public class Farm implements Runnable
 			this.drawFood(this.food.x, this.food.y);
 
 
-			this.associatedCanvas.revalidate();
-			Thread.sleep(100);
+			//this.associatedCanvas.revalidate();
+			Thread.sleep(200);
 			this.time++;
 		}
 	}
@@ -178,8 +185,7 @@ public class Farm implements Runnable
 		try
 		{
 			this.go();
-		}
-		catch (Exception e)
+		} catch (Exception e)
 		{
 			e.printStackTrace();
 		}
@@ -194,9 +200,9 @@ public class Farm implements Runnable
 	//LinkedList<Hive> hives;
 	//LinkedList<Food> food;
 
-	private Point hive = new Point(150,150);
+	private Point hive = new Point(150, 150);
 
-	private Point food = new Point(100,100);
+	private Point food = new Point(100, 100);
 
 	HashMap<Point, LinkedList<Feramon>> map;
 
