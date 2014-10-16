@@ -5,7 +5,8 @@ import java.awt.*;
 /**
  * Created by Anna on 16/10/2014.
  */
-public abstract class AntSite {
+public abstract class AntSite
+{
 
 	// ----------------------------------------------------------------------------
 	// Section: Constructors
@@ -13,12 +14,13 @@ public abstract class AntSite {
 
 	/**
 	 * Creates an AntSite where
-	 * @param point represents the top left point of site location on the farm and
-	 * @param height is measured downwards and
-	 * @param width is measured to the right of the point
+	 * @param topLeftPoint represents the top left point of site location on the farm;
+	 * @param height is measured downwards;
+	 * @param width is measured to the right of the topLeftPoint.
 	 */
-	public AntSite(Point point, int height, int width) {
-		this.point = point;
+	public AntSite(Point topLeftPoint, int height, int width)
+	{
+		this.topLeftPoint = topLeftPoint;
 		this.height = height;
 		this.width = width;
 	}
@@ -32,10 +34,13 @@ public abstract class AntSite {
 	 * @param antPoint - the given ant
 	 * @return - true if ant is in, false otherwise
 	 */
-	private boolean containsAnt(Point antPoint) {
-		if (this.point.getX() <= antPoint.getX() && this.point.getY() <= antPoint.getY()) {
-			if (this.point.getX() + this.width >= antPoint.getX() && this.point.getY() + this.height >=
-					antPoint.getY()){
+	private boolean containsAnt(Point antPoint)
+	{
+		if (this.topLeftPoint.getX() <= antPoint.getX() && this.topLeftPoint.getY() <= antPoint.getY())
+		{
+			if (this.topLeftPoint.getX() + this.width >= antPoint.getX() &&
+					this.topLeftPoint.getY() + this.height >= antPoint.getY())
+			{
 				return true;
 			}
 		}
@@ -45,7 +50,7 @@ public abstract class AntSite {
 	// ----------------------------------------------------------------------------
 	// Section: Fields
 	// ----------------------------------------------------------------------------
-	private Point point;
-	private int   height;
-	private int   width;
+	private Point topLeftPoint;
+	private int height;
+	private int width;
 }
