@@ -6,37 +6,47 @@ package antsimulator;
 import java.awt.*;
 import java.util.HashMap;
 
+
 public class Ant
 {
-    // ----------------------------------------------------------------------------
-    // Section: Constructors 
-    // ----------------------------------------------------------------------------
+	// ----------------------------------------------------------------------------
+	// Section: Constructors
+	// ----------------------------------------------------------------------------
 
-	public Ant(Point location, Farm ownerFarm)
+
+	public Ant(Point location)
 	{
 		this.location = location;
-		this.ownerFarm = ownerFarm;
 		this.id = IdFactory.getNextIntId();
 		this.behaviour = Behaviour.RANDOM;
 		this.direction = this.randomDirection();
 	}
 
 	// ----------------------------------------------------------------------------
-    // Section: Getters and Setters 
-    // ----------------------------------------------------------------------------
+	// Section: Getters and Setters
+	// ----------------------------------------------------------------------------
+
 
 	public Point getLocation()
 	{
 		return location;
 	}
 
+
 	public Behaviour getBehaviour()
 	{
 		return behaviour;
 	}
-    // ----------------------------------------------------------------------------
-    // Section: Other methods 
-    // ----------------------------------------------------------------------------
+
+
+	public void setBehaviour(Behaviour behaviour)
+	{
+		this.behaviour = behaviour;
+	}
+
+	// ----------------------------------------------------------------------------
+	// Section: Movement related.
+	// ----------------------------------------------------------------------------
 
 	private Direction randomDirection()
 	{
@@ -62,7 +72,8 @@ public class Ant
 		return rd;
 	}
 
-	public void move(int deltax, int deltay)
+
+	public void moveByDelta(int deltax, int deltay)
 	{
 		int x = this.location.x;
 		int y = this.location.y;
@@ -72,6 +83,7 @@ public class Ant
 
 		this.location.setLocation(x, y);
 	}
+
 
 	public void move(Direction direction)
 	{
@@ -92,6 +104,7 @@ public class Ant
 		}
 	}
 
+
 	public void relativeMove(RelativeDirection relativeDirection)
 	{
 		switch (relativeDirection)
@@ -111,21 +124,22 @@ public class Ant
 		}
 	}
 
+
 	public void moveForward()
 	{
-	 	switch (this.direction)
+		switch (this.direction)
 		{
 			case UP:
-				this.move(0, -1);
+				this.moveByDelta(0, -1);
 				break;
 			case DOWN:
-				this.move(0, 1);
+				this.moveByDelta(0, 1);
 				break;
 			case LEFT:
-				this.move(-1 , 0);
+				this.moveByDelta(-1, 0);
 				break;
 			case RIGHT:
-				this.move(1, 0);
+				this.moveByDelta(1, 0);
 				break;
 		}
 	}
@@ -136,19 +150,19 @@ public class Ant
 		switch (this.direction)
 		{
 			case UP:
-				this.move(0, 1);
+				this.moveByDelta(0, 1);
 				this.direction = Direction.DOWN;
 				break;
 			case DOWN:
-				this.move(0, -1);
+				this.moveByDelta(0, -1);
 				this.direction = Direction.UP;
 				break;
 			case LEFT:
-				this.move(1 , 0);
+				this.moveByDelta(1, 0);
 				this.direction = Direction.RIGHT;
 				break;
 			case RIGHT:
-				this.move(-1, 0);
+				this.moveByDelta(-1, 0);
 				this.direction = Direction.LEFT;
 				break;
 		}
@@ -160,19 +174,19 @@ public class Ant
 		switch (this.direction)
 		{
 			case UP:
-				this.move(-1, 0);
+				this.moveByDelta(-1, 0);
 				this.direction = Direction.LEFT;
 				break;
 			case DOWN:
-				this.move(1, 0);
+				this.moveByDelta(1, 0);
 				this.direction = Direction.RIGHT;
 				break;
 			case LEFT:
-				this.move(0 , -1);
+				this.moveByDelta(0, -1);
 				this.direction = Direction.DOWN;
 				break;
 			case RIGHT:
-				this.move(0, 1);
+				this.moveByDelta(0, 1);
 				this.direction = Direction.UP;
 				break;
 		}
@@ -184,23 +198,24 @@ public class Ant
 		switch (this.direction)
 		{
 			case UP:
-				this.move(1, 0);
+				this.moveByDelta(1, 0);
 				this.direction = Direction.RIGHT;
 				break;
 			case DOWN:
-				this.move(-1, 0);
+				this.moveByDelta(-1, 0);
 				this.direction = Direction.LEFT;
 				break;
 			case LEFT:
-				this.move(0 , 1);
+				this.moveByDelta(0, 1);
 				this.direction = Direction.UP;
 				break;
 			case RIGHT:
-				this.move(0, -1);
+				this.moveByDelta(0, -1);
 				this.direction = Direction.DOWN;
 				break;
 		}
 	}
+
 
 	public HashMap<RelativeDirection, Point> getMoveToCells()
 	{
@@ -233,15 +248,14 @@ public class Ant
 		return map;
 	}
 
+
 	// ----------------------------------------------------------------------------
-    // Section: Fields 
-    // ----------------------------------------------------------------------------
+	// Section: Fields
+	// ----------------------------------------------------------------------------
 	private Point location;
 	private Direction direction;
 
 	private long id;
-
-	private Farm ownerFarm;
 
 	private Behaviour behaviour;
 }
