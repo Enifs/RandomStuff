@@ -1,8 +1,9 @@
-package antsimulator;
-
 /**
  * Created by Enifs
  */
+
+package antsimulator;
+
 public enum Direction
 {
 	UP,

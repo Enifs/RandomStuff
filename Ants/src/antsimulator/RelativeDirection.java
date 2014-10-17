@@ -1,8 +1,8 @@
-package antsimulator;
-
 /**
  * Created by Enifs
  */
+package antsimulator;
+
 public enum RelativeDirection
 {
 	FORWARD,
