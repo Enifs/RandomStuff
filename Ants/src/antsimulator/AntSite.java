@@ -1,13 +1,14 @@
+/**
+ * Created by Anna on 16/10/2014.
+ */
+
 package antsimulator;
 
 import java.awt.*;
 
-/**
- * Created by Anna on 16/10/2014.
- */
+
 public abstract class AntSite
 {
-
 	// ----------------------------------------------------------------------------
 	// Section: Constructors
 	// ----------------------------------------------------------------------------
@@ -23,6 +24,28 @@ public abstract class AntSite
 		this.topLeftPoint = topLeftPoint;
 		this.height = height;
 		this.width = width;
+	}
+
+	// ----------------------------------------------------------------------------
+	// Section: Getters and Setters
+	// ----------------------------------------------------------------------------
+
+
+	public Point getTopLeftPoint()
+	{
+		return topLeftPoint;
+	}
+
+
+	public int getHeight()
+	{
+		return height;
+	}
+
+
+	public int getWidth()
+	{
+		return width;
 	}
 
 	// ----------------------------------------------------------------------------
@@ -50,6 +73,7 @@ public abstract class AntSite
 	// ----------------------------------------------------------------------------
 	// Section: Fields
 	// ----------------------------------------------------------------------------
+
 	private Point topLeftPoint;
 	private int height;
 	private int width;
