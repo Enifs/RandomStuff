@@ -3,38 +3,44 @@
  */
 package antsimulator;
 
-import java.util.Collection;
 import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Random;
+
 
 public class RandomFactory
 {
-    // ----------------------------------------------------------------------------
-    // Section: Constructors 
-    // ----------------------------------------------------------------------------
-    
-    // ----------------------------------------------------------------------------
-    // Section: Getters and Setters 
-    // ----------------------------------------------------------------------------
-    
-    // ----------------------------------------------------------------------------
-    // Section: Other methods 
-    // ----------------------------------------------------------------------------
-    public static int getRandomInteger()
+	// ----------------------------------------------------------------------------
+	// Section: Constructors
+	// ----------------------------------------------------------------------------
+
+	// ----------------------------------------------------------------------------
+	// Section: Getters and Setters
+	// ----------------------------------------------------------------------------
+
+
+	// ----------------------------------------------------------------------------
+	// Section: Other methods
+	// ----------------------------------------------------------------------------
+	public static int getRandomInteger()
 	{
 		if (RandomFactory.numbers.size() == 0)
 		{
 			Random r = new Random(System.currentTimeMillis());
-			for (int i = 0; i < 10000; i++)
+
+			for (int i = 0; i < 100000; i++)
 			{
 				RandomFactory.numbers.add(r.nextInt());
 			}
 		}
 
-		return RandomFactory.numbers.pollFirst();
+		return RandomFactory.numbers.poll();
 	}
-    // ----------------------------------------------------------------------------
-    // Section: Fields 
-    // ----------------------------------------------------------------------------
-	private static LinkedList<Integer> numbers = new LinkedList<Integer>();
+
+
+	// ----------------------------------------------------------------------------
+	// Section: Fields
+	// ----------------------------------------------------------------------------
+
+	private static Queue<Integer> numbers = new LinkedList<Integer>();
 }

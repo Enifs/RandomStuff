@@ -14,9 +14,10 @@ public class Ant
 	// ----------------------------------------------------------------------------
 
 
-	public Ant(Point location)
+	public Ant(Hive hive, Point location)
 	{
-		this.location = location;
+		this.hive = hive;
+		this.location = new Point(location);
 		this.id = IdFactory.getNextIntId();
 		this.behaviour = Behaviour.RANDOM;
 		this.direction = this.randomDirection();
@@ -42,6 +43,24 @@ public class Ant
 	public void setBehaviour(Behaviour behaviour)
 	{
 		this.behaviour = behaviour;
+	}
+
+
+	public boolean isCarryingFood()
+	{
+		return this.carryingFood;
+	}
+
+
+	public void setCarryingFood(boolean carryingFood)
+	{
+		this.carryingFood = carryingFood;
+	}
+
+
+	public Hive getHive()
+	{
+		return this.hive;
 	}
 
 	// ----------------------------------------------------------------------------
@@ -82,46 +101,6 @@ public class Ant
 		y += deltay;
 
 		this.location.setLocation(x, y);
-	}
-
-
-	public void move(Direction direction)
-	{
-		switch (direction)
-		{
-			case UP:
-				this.location.move(0, 1);
-				break;
-			case DOWN:
-				this.location.move(0, -1);
-				break;
-			case LEFT:
-				this.location.move(-1, 0);
-				break;
-			case RIGHT:
-				this.location.move(1, 0);
-				break;
-		}
-	}
-
-
-	public void relativeMove(RelativeDirection relativeDirection)
-	{
-		switch (relativeDirection)
-		{
-			case FORWARD:
-				this.moveForward();
-				break;
-			case BACKWARD:
-				this.moveBackward();
-				break;
-			case LEFT:
-				this.moveLeft();
-				break;
-			case RIGHT:
-				this.moveRight();
-				break;
-		}
 	}
 
 
@@ -216,6 +195,25 @@ public class Ant
 		}
 	}
 
+	public void moveStaticUp()
+	{
+		this.moveByDelta(0, +1);
+	}
+
+	public void moveStaticRight()
+	{
+		this.moveByDelta(+1, 0);
+	}
+
+	public void moveStaticDown()
+	{
+		this.moveByDelta(0, -1);
+	}
+
+	public void moveStaticLeft()
+	{
+		this.moveByDelta(-1, 0);
+	}
 
 	public HashMap<RelativeDirection, Point> getMoveToCells()
 	{
@@ -254,6 +252,8 @@ public class Ant
 	// ----------------------------------------------------------------------------
 	private Point location;
 	private Direction direction;
+	private boolean carryingFood = false;
+	private Hive hive;
 
 	private long id;
 

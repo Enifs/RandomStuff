@@ -57,7 +57,7 @@ public abstract class AntSite
 	 * @param antPoint - the given ant
 	 * @return - true if ant is in, false otherwise
 	 */
-	private boolean containsAnt(Point antPoint)
+	public boolean containsAnt(Point antPoint)
 	{
 		if (this.topLeftPoint.getX() <= antPoint.getX() && this.topLeftPoint.getY() <= antPoint.getY())
 		{

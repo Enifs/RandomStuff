@@ -26,7 +26,7 @@ public class Farm implements Runnable
 
 		for (int i = 0; i < numberOfAnts; i++)
 		{
-			this.ants.add(new Ant(new Point(this.hive)));
+			this.ants.add(new Ant(null, new Point(this.hive)));
 		}
 
 	}

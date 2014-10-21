@@ -30,6 +30,11 @@ public class Food extends AntSite
 		this.foodReserve = foodReserve;
 	}
 
+	public void takeFoodBit()
+	{
+		this.foodReserve--;
+	}
+
 	// ----------------------------------------------------------------------------
 	// Section: Fields
 	// ----------------------------------------------------------------------------

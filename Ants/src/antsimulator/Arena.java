@@ -29,8 +29,9 @@ public class Arena
 
 	public boolean contains(Point point)
 	{
-		return point.getX() > 0 && point.getX() <= this.width &&
-				point.getY() > 0 && point.getY() <= this.heigth;
+		boolean returnValue = point.getX() >= 0 && point.getX() < this.width &&
+				point.getY() >= 0 && point.getY() < this.heigth;
+		return returnValue;
 	}
 
 	// ----------------------------------------------------------------------------

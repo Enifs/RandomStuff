@@ -4,6 +4,7 @@
 package antsimulator;
 
 import java.awt.*;
+import java.util.HashSet;
 import java.util.Set;
 
 
@@ -24,7 +25,7 @@ public class Hive extends AntSite
 
 	public void addAnt()
 	{
-		this.residentAnts.add(new Ant(this.getTopLeftPoint()));
+		this.residentAnts.add(new Ant(this, this.getTopLeftPoint()));
 	}
 
 	// ----------------------------------------------------------------------------
@@ -36,9 +37,20 @@ public class Hive extends AntSite
 		return residentAnts;
 	}
 
+
+	public int getCollectedFood()
+	{
+		return collectedFood;
+	}
+
+	public void storeFood()
+	{
+		this.collectedFood++;
+	}
 	// ----------------------------------------------------------------------------
 	// Section: Fields
 	// ----------------------------------------------------------------------------
 
-	private Set<Ant> residentAnts;
+	private Set<Ant> residentAnts = new HashSet<Ant>();
+	private int collectedFood = 0;
 }
