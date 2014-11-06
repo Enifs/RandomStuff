@@ -7,6 +7,7 @@ package antsimulator.application;
 import antsimulator.Arena;
 import antsimulator.Food;
 import antsimulator.Hive;
+import antsimulator.Visualiser;
 
 import java.awt.*;
 
@@ -33,7 +34,11 @@ public class AntSimulator
 
 		if (this.engine.isReady())
 		{
-			this.engine.advanceUntil(new OneFoodStocked());
+//			this.engine.advanceUntil(new OneFoodStocked());
+
+			this.engine.advance(50);
+
+			Visualiser visualiser = new Visualiser(this.engine);
 		}
 
 		int br = 34;
