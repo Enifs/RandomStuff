@@ -38,7 +38,7 @@ public class AntSimulator
 
 			this.engine.advance(50);
 
-			Visualiser visualiser = new Visualiser(this.engine);
+			Visualiser visualiser = new Visualiser(this.engine, 200, 200);
 		}
 
 		int br = 34;

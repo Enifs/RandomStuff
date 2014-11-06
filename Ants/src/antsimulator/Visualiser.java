@@ -11,10 +11,10 @@ import java.awt.*;
 public class Visualiser extends JFrame
 {
 
-	public Visualiser(Engine engine) throws HeadlessException
+	public Visualiser(Engine engine, int width, int heigth) throws HeadlessException
 	{
 		this.engine = engine;
-		this.setSize(500, 500);
+		this.setSize(width, heigth);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setContentPane(new AntGround());
 		this.setVisible(true);
@@ -22,7 +22,7 @@ public class Visualiser extends JFrame
 
 	public static void main(String[] args)
 	{
-		Visualiser visualiser = new Visualiser(null);
+		Visualiser visualiser = new Visualiser(null, , );
 
 	}
 
