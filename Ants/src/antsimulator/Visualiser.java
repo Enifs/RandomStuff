@@ -14,9 +14,32 @@ public class Visualiser extends JFrame
 	public Visualiser(Engine engine, int width, int heigth) throws HeadlessException
 	{
 		this.engine = engine;
-		this.setSize(width, heigth);
+		double scaleX;
+		double scaleY;
+		AntGround antGround = new AntGround();
+		if (width < engine.getArena().width || heigth < engine.getArena().heigth)
+		{
+			this.setSize(engine.getArena().width, engine.getArena().heigth);
+		}
+		else
+		{
+
+			scaleX = width / engine.getArena().width;
+			scaleY = heigth / engine.getArena().heigth;
+			if (scaleX > scaleY)
+			{
+				antGround.setScale((int) scaleY);
+				this.setSize((int) (engine.getArena().width * scaleY), heigth);
+			}
+			else
+			{
+				antGround.setScale((int) scaleX);
+				this.setSize(width, (int) (engine.getArena().heigth * scaleX));
+			}
+		}
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setContentPane(new AntGround());
+		antGround.setBackground(new Color(172, 225, 175));
+		this.setContentPane(antGround);
 		this.setVisible(true);
 	}
 
@@ -26,13 +49,42 @@ public class Visualiser extends JFrame
 		@Override
 		public void paintComponent(Graphics g)
 		{
-			g.fillOval(100, 100, 50, 50);
-			engine.getHives();
+
 			for (Hive hive : engine.getHives())
 			{
-			  g.fillRect(0,0,hive.getWidth(), hive.getHeight());
+				g.setColor(Color.GREEN);
+				g.fillRect((int) (hive.getTopLeftPoint().getX() * scale), (int) (hive.getTopLeftPoint()
+								.getY() * scale),
+						((int) (hive.getWidth() * scale)),
+						((int) (hive.getHeight() * scale)));
+				for (Ant ant : hive.getResidentAnts())
+				{
+					g.setColor(Color.RED);
+					g.fillOval((int) ant.getLocation().getX(), (int) ant.getLocation().getY(), (int) scale,
+							(int) scale);
+				}
 			}
+
+			for (Food food : engine.getFood())
+			{
+				g.setColor(Color.YELLOW);
+				g.fillRect((int) (food.getTopLeftPoint().getX() * scale), (int) (food.getTopLeftPoint()
+								.getY
+										() * scale),
+						((int) (food.getWidth() * scale)),
+						((int) (food.getHeight() * scale)));
+			}
+			g.setColor(Color.BLACK);
+			g.drawRect(0, 0, ((int) (engine.getArena().width * scale)), ((int) (engine.getArena().heigth
+					* scale)));
 		}
+
+		public void setScale(int scale)
+		{
+			this.scale = scale;
+		}
+
+		private double scale;
 	}
 
 	private Engine engine;
