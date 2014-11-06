@@ -20,11 +20,6 @@ public class Visualiser extends JFrame
 		this.setVisible(true);
 	}
 
-	public static void main(String[] args)
-	{
-		Visualiser visualiser = new Visualiser(null, , );
-
-	}
 
 	private class AntGround extends JPanel
 	{
