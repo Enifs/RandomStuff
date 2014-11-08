@@ -95,16 +95,87 @@ public class Engine
 			}
 		});
 
+		this.feramonManager.layFeramon(
+			new Feramon(Feramon.Type.A, this.timePassed),
+			ant.getLocation(),
+			this.timePassed);
+
 		switch (feramons.size())
 		{
 			case 0:
 				this.randomMovement(ant);
 			break;
-			case 1:
-				break;
 			default:
+				ant.moveTo(map.get(feramons.get(0)));
 		}
 	}
+
+
+	private void deliverMovement(Ant ant)
+	{
+		Map<Feramon, Point> map = new HashMap<Feramon, Point>(4);
+
+		ArrayList<Feramon> feramons = new ArrayList<Feramon>();
+
+		Point leftPoint = new Point(ant.getLocation().x - 1, ant.getLocation().y);
+		Point rightPoint = new Point(ant.getLocation().x + 1, ant.getLocation().y);
+		Point upPoint = new Point(ant.getLocation().x, ant.getLocation().y + 1);
+		Point downPoint = new Point(ant.getLocation().x, ant.getLocation().y - 1);
+
+		Feramon left = this.feramonManager.fetchFeramon(Feramon.Type.A, leftPoint);
+		Feramon right = this.feramonManager.fetchFeramon(Feramon.Type.A, rightPoint);
+		Feramon up = this.feramonManager.fetchFeramon(Feramon.Type.A, upPoint);
+		Feramon down = this.feramonManager.fetchFeramon(Feramon.Type.A, downPoint);
+
+		if (left != null)
+		{
+			map.put(left, leftPoint);
+			feramons.add(left);
+		}
+
+		if (right != null)
+		{
+			map.put(right, rightPoint);
+			feramons.add(right);
+		}
+
+		if (up != null)
+		{
+			map.put(up, upPoint);
+			feramons.add(up);
+
+		}
+
+		if (down != null)
+		{
+			map.put(down, downPoint);
+			feramons.add(down);
+		}
+
+		Collections.sort(feramons, new Comparator<Feramon>()
+		{
+			@Override
+			public int compare(Feramon o1, Feramon o2)
+			{
+				return Integer.compare(o1.intensity(timePassed), o2.intensity(timePassed));
+			}
+		});
+
+		this.feramonManager.layFeramon(
+			new Feramon(Feramon.Type.A, this.timePassed),
+			ant.getLocation(),
+			this.timePassed);
+
+		switch (feramons.size())
+		{
+			case 0:
+				this.randomMovement(ant);
+				break;
+			default:
+				ant.moveTo(map.get(feramons.get(0)));
+		}
+	}
+
 
 	private void randomMovement(Ant ant)
 	{

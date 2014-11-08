@@ -67,6 +67,11 @@ public class Ant
 	// Section: Movement related.
 	// ----------------------------------------------------------------------------
 
+	public void moveTo(Point point)
+	{
+		this.location.setLocation(point);
+	}
+
 	private Direction randomDirection()
 	{
 		Direction rd = Direction.UP;
