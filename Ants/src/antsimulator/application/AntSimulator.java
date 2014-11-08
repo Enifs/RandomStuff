@@ -23,13 +23,13 @@ public class AntSimulator
 
 	private void run()
 	{
-		this.engine.setArena(new Arena(5, 5));
+		this.engine.setArena(new Arena(10, 10));
 		this.hive = new Hive(new Point(0, 0), 1, 1);
 		this.engine.addHive(hive);
 		this.food = new Food(new Point(4, 4), 1, 1);
 		this.engine.addFood(food);
 
-		food.setFoodReserve(100);
+		food.setFoodReserve(1000);
 		hive.addAnt();
 		hive.addAnt();
 		hive.addAnt();
@@ -37,9 +37,11 @@ public class AntSimulator
 
 		if (this.engine.isReady())
 		{
-			this.engine.advanceUntil(new OneFoodStocked());
-//
+//			this.engine.advanceUntil(new OneFoodStocked());
+
 //			this.engine.advance(50);
+
+			this.engine.advanceUntil(new FoodIsGone());
 
 			Visualiser visualiser = new Visualiser(this.engine, 1000, 500, Visualiser.Mode.Ants);
 		}
@@ -55,6 +57,15 @@ public class AntSimulator
 		public boolean stop()
 		{
 			return hive.getCollectedFood() > 0;
+		}
+	}
+
+	private class FoodIsGone implements Engine.StopEvent
+	{
+		@Override
+		public boolean stop()
+		{
+			return food.getFoodReserve() == 0;
 		}
 	}
 }

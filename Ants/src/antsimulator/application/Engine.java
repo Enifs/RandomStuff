@@ -36,9 +36,9 @@ public class Engine
 		switch(ant.getBehaviour())
 		{
 			case SEARCH:
-//				break;
+				this.searchMovement(ant);
 			case GO_HOME:
-//				break;
+				this.deliverMovement(ant);
 			case RANDOM:
 				this.randomMovement(ant);
 				break;
