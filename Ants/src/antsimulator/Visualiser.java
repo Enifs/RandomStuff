@@ -19,7 +19,7 @@ public class Visualiser extends JFrame
 		AntGround antGround = new AntGround();
 		if (width < engine.getArena().width || heigth < engine.getArena().heigth)
 		{
-			this.setSize(engine.getArena().width, engine.getArena().heigth);
+			this.setSize(engine.getArena().width, engine.getArena().heigth + 19);
 		}
 		else
 		{
@@ -29,12 +29,12 @@ public class Visualiser extends JFrame
 			if (scaleX > scaleY)
 			{
 				antGround.setScale((int) scaleY);
-				this.setSize((int) (engine.getArena().width * scaleY), heigth);
+				this.setSize((int) (engine.getArena().width * scaleY), heigth + 19);
 			}
 			else
 			{
 				antGround.setScale((int) scaleX);
-				this.setSize(width, (int) (engine.getArena().heigth * scaleX));
+				this.setSize(width, (int) (engine.getArena().heigth * scaleX) + 19);
 			}
 		}
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
