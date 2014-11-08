@@ -60,7 +60,7 @@ public class Visualiser extends JFrame
 				for (Ant ant : hive.getResidentAnts())
 				{
 					g.setColor(Color.RED);
-					g.fillOval((int) ant.getLocation().getX(), (int) ant.getLocation().getY(), (int) scale,
+					g.fillOval((int) (ant.getLocation().getX() * scale), (int) (ant.getLocation().getY() * scale), (int) scale,
 							(int) scale);
 				}
 			}
