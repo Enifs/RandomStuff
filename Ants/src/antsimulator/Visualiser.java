@@ -1,6 +1,7 @@
 package antsimulator;
 
 import antsimulator.application.Engine;
+import com.sun.org.apache.xpath.internal.operations.Mod;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,35 +12,48 @@ import java.awt.*;
 public class Visualiser extends JFrame
 {
 
-	public Visualiser(Engine engine, int width, int heigth) throws HeadlessException
+	public Visualiser(Engine engine, int width, int heigth, Mode mode) throws HeadlessException
 	{
+		this.setTitle(mode.toString());
 		this.engine = engine;
 		double scaleX;
 		double scaleY;
-		AntGround antGround = new AntGround();
 		if (width < engine.getArena().width || heigth < engine.getArena().heigth)
 		{
 			this.setSize(engine.getArena().width, engine.getArena().heigth + 19);
 		}
 		else
 		{
-
 			scaleX = width / engine.getArena().width;
 			scaleY = heigth / engine.getArena().heigth;
 			if (scaleX > scaleY)
 			{
-				antGround.setScale((int) scaleY);
+				this.setScale((int) scaleY);
 				this.setSize((int) (engine.getArena().width * scaleY), heigth + 19);
 			}
 			else
 			{
-				antGround.setScale((int) scaleX);
+				this.setScale((int) scaleX);
 				this.setSize(width, (int) (engine.getArena().heigth * scaleX) + 19);
 			}
 		}
+
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		antGround.setBackground(new Color(172, 225, 175));
-		this.setContentPane(antGround);
+
+		switch (mode)
+		{
+			case Feramons:
+				FeramonGround feramonGround = new FeramonGround();
+				feramonGround.setBackground(new Color(172, 225, 175));
+				this.setContentPane(feramonGround);
+				break;
+			case Ants:
+				AntGround antGround = new AntGround();
+				antGround.setBackground(new Color(172, 225, 175));
+				this.setContentPane(antGround);
+				break;
+		}
+
 		this.setVisible(true);
 	}
 
@@ -49,7 +63,6 @@ public class Visualiser extends JFrame
 		@Override
 		public void paintComponent(Graphics g)
 		{
-
 			for (Hive hive : engine.getHives())
 			{
 				g.setColor(Color.GREEN);
@@ -60,7 +73,8 @@ public class Visualiser extends JFrame
 				for (Ant ant : hive.getResidentAnts())
 				{
 					g.setColor(Color.RED);
-					g.fillOval((int) (ant.getLocation().getX() * scale), (int) (ant.getLocation().getY() * scale), (int) scale,
+					g.fillOval((int) (ant.getLocation().getX() * scale), (int) (ant.getLocation().getY() *
+									scale), (int) scale,
 							(int) scale);
 				}
 			}
@@ -78,14 +92,49 @@ public class Visualiser extends JFrame
 			g.drawRect(0, 0, ((int) (engine.getArena().width * scale)), ((int) (engine.getArena().heigth
 					* scale)));
 		}
+	}
 
-		public void setScale(int scale)
+	private class FeramonGround extends JPanel
+	{
+		@Override
+		public void paintComponent(Graphics g)
 		{
-			this.scale = scale;
+			for (Hive hive : engine.getHives())
+			{
+				g.setColor(Color.GREEN);
+				g.fillRect((int) (hive.getTopLeftPoint().getX() * scale), (int) (hive.getTopLeftPoint()
+								.getY() * scale),
+						((int) (hive.getWidth() * scale)),
+						((int) (hive.getHeight() * scale)));
+			}
+
+			for (Food food : engine.getFood())
+			{
+				g.setColor(Color.YELLOW);
+				g.fillRect((int) (food.getTopLeftPoint().getX() * scale), (int) (food.getTopLeftPoint()
+								.getY
+										() * scale),
+						((int) (food.getWidth() * scale)),
+						((int) (food.getHeight() * scale)));
+			}
+			g.setColor(Color.BLACK);
+			g.drawRect(0, 0, ((int) (engine.getArena().width * scale)),
+					((int) (engine.getArena().heigth
+							* scale)));
 		}
 
-		private double scale;
+	}
+
+	public void setScale(int scale)
+	{
+		this.scale = scale;
 	}
 
 	private Engine engine;
+	private double scale;
+
+	public enum Mode
+	{
+		Feramons, Ants
+	}
 }

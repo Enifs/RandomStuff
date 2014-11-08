@@ -44,7 +44,8 @@ public class FeramonManager
 		return this.map.get(type).get(cPoint);
 	}
 
-	Map<Feramon.Type, Map<CustomPoint, Feramon>> map = new HashMap<Feramon.Type, Map<CustomPoint, Feramon>>();
+	Map<Feramon.Type, Map<CustomPoint, Feramon>> map = new HashMap<Feramon.Type, Map<CustomPoint,
+			Feramon>>();
 
 	private class CustomPoint
 	{
@@ -59,6 +60,12 @@ public class FeramonManager
 		{
 			CustomPoint point = (CustomPoint) obj;
 			return this.x == point.x && this.y == point.y;
+		}
+
+		@Override
+		public int hashCode()
+		{
+			return (1 / 2) * (this.x + this.y) * (this.x + this.y + 1) + this.y;
 		}
 
 		int x;

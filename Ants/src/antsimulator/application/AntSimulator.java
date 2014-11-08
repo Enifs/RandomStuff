@@ -41,7 +41,7 @@ public class AntSimulator
 //
 //			this.engine.advance(50);
 
-			Visualiser visualiser = new Visualiser(this.engine, 1000, 500);
+			Visualiser visualiser = new Visualiser(this.engine, 1000, 500, Visualiser.Mode.Ants);
 		}
 	}
 
