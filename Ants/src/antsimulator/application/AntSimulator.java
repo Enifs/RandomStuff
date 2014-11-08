@@ -31,17 +31,18 @@ public class AntSimulator
 
 		food.setFoodReserve(100);
 		hive.addAnt();
+		hive.addAnt();
+		hive.addAnt();
+		hive.addAnt();
 
 		if (this.engine.isReady())
 		{
-//			this.engine.advanceUntil(new OneFoodStocked());
+			this.engine.advanceUntil(new OneFoodStocked());
+//
+//			this.engine.advance(50);
 
-			this.engine.advance(50);
-
-			Visualiser visualiser = new Visualiser(this.engine, 200, 200);
+			Visualiser visualiser = new Visualiser(this.engine, 1000, 500);
 		}
-
-		int br = 34;
 	}
 
 	Engine engine = new Engine();
