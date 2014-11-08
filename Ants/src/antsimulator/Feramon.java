@@ -59,6 +59,7 @@ public class Feramon
 		if (intensity < 1)
 		{
 			this.active = false;
+			intensity = 0;
 		}
 
 		return intensity;
