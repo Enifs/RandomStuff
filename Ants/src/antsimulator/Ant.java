@@ -19,7 +19,7 @@ public class Ant
 		this.hive = hive;
 		this.location = new Point(location);
 		this.id = IdFactory.getNextIntId();
-		this.behaviour = Behaviour.RANDOM;
+		this.behaviour = Behaviour.SEARCH;
 		this.direction = this.randomDirection();
 	}
 

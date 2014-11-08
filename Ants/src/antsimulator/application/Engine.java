@@ -107,6 +107,7 @@ public class Engine
 			break;
 			default:
 				ant.moveTo(map.get(feramons.get(0)));
+				this.updateBehaviour(ant);
 		}
 	}
 
@@ -173,6 +174,7 @@ public class Engine
 				break;
 			default:
 				ant.moveTo(map.get(feramons.get(0)));
+				this.updateBehaviour(ant);
 		}
 	}
 
@@ -218,12 +220,18 @@ public class Engine
 				break;
 		}
 
+		this.updateBehaviour(ant);
+	}
+
+	private void updateBehaviour(Ant ant)
+	{
 		if (ant.isCarryingFood())
 		{
 			if (ant.getHive().containsAnt(ant.getLocation()))
 			{
 				ant.getHive().storeFood();
 				ant.setCarryingFood(false);
+				ant.setBehaviour(Behaviour.SEARCH);
 			}
 		}
 		else
@@ -234,11 +242,11 @@ public class Engine
 				{
 					f.takeFoodBit();
 					ant.setCarryingFood(true);
+					ant.setBehaviour(Behaviour.GO_HOME);
 				}
 			}
 		}
 	}
-
 
 	public void advance(long time)
 		{
