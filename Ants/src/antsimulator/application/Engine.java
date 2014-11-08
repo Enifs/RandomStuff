@@ -5,8 +5,8 @@
 package antsimulator.application;
 
 import antsimulator.*;
-
-import java.util.ArrayList;
+import java.awt.*;
+import java.util.*;
 
 
 public class Engine
@@ -45,6 +45,66 @@ public class Engine
 		}
 	}
 
+	private void searchMovement(Ant ant)
+	{
+		Map<Feramon, Point> map = new HashMap<Feramon, Point>(4);
+
+		ArrayList<Feramon> feramons = new ArrayList<Feramon>();
+
+		Point leftPoint = new Point(ant.getLocation().x - 1, ant.getLocation().y);
+		Point rightPoint = new Point(ant.getLocation().x + 1, ant.getLocation().y);
+		Point upPoint = new Point(ant.getLocation().x, ant.getLocation().y + 1);
+		Point downPoint = new Point(ant.getLocation().x, ant.getLocation().y - 1);
+
+		Feramon left = this.feramonManager.fetchFeramon(Feramon.Type.B, leftPoint);
+		Feramon right = this.feramonManager.fetchFeramon(Feramon.Type.B, rightPoint);
+		Feramon up = this.feramonManager.fetchFeramon(Feramon.Type.B, upPoint);
+		Feramon down = this.feramonManager.fetchFeramon(Feramon.Type.B, downPoint);
+
+		if (left != null)
+		{
+			map.put(left, leftPoint);
+			feramons.add(left);
+		}
+
+		if (right != null)
+		{
+			map.put(right, rightPoint);
+			feramons.add(right);
+		}
+
+		if (up != null)
+		{
+			map.put(up, upPoint);
+			feramons.add(up);
+
+		}
+
+		if (down != null)
+		{
+			map.put(down, downPoint);
+			feramons.add(down);
+		}
+
+		Collections.sort(feramons, new Comparator<Feramon>()
+		{
+			@Override
+			public int compare(Feramon o1, Feramon o2)
+			{
+				return Integer.compare(o1.intensity(timePassed), o2.intensity(timePassed));
+			}
+		});
+
+		switch (feramons.size())
+		{
+			case 0:
+				this.randomMovement(ant);
+			break;
+			case 1:
+				break;
+			default:
+		}
+	}
 
 	private void randomMovement(Ant ant)
 	{
@@ -158,7 +218,6 @@ public class Engine
 		return this.food;
 	}
 
-
 	public ArrayList<Hive> getHives()
 	{
 		return this.hives;
@@ -174,7 +233,7 @@ public class Engine
 
 	private FeramonManager feramonManager = new FeramonManager();
 
-	long timePassed = 0;
+	int timePassed = 0;
 
 	// ----------------------------------------------------------------------------
 	// Section: Inner classes
