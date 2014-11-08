@@ -5,6 +5,7 @@
 package antsimulator.application;
 
 import antsimulator.*;
+
 import java.awt.*;
 import java.util.*;
 
@@ -15,25 +16,25 @@ public class Engine
 	// Section: Time control
 	// ----------------------------------------------------------------------------
 
-		public void advance()
-		{
-			assert this.isReady() : "Engine is not ready to work yet!";
+	public void advance()
+	{
+		assert this.isReady() : "Engine is not ready to work yet!";
 
-			for (Hive hive : this.hives)
+		for (Hive hive : this.hives)
+		{
+			for (Ant ant : hive.getResidentAnts())
 			{
-				for (Ant ant : hive.getResidentAnts())
-				{
-					this.moveAnt(ant);
-				}
+				this.moveAnt(ant);
 			}
-			// do stuff
-			this.timePassed++;
 		}
+		// do stuff
+		this.timePassed++;
+	}
 
 
 	private void moveAnt(Ant ant)
 	{
-		switch(ant.getBehaviour())
+		switch (ant.getBehaviour())
 		{
 			case SEARCH:
 				this.searchMovement(ant);
@@ -96,15 +97,15 @@ public class Engine
 		});
 
 		this.feramonManager.layFeramon(
-			new Feramon(Feramon.Type.A, this.timePassed),
-			ant.getLocation(),
-			this.timePassed);
+				new Feramon(Feramon.Type.A, this.timePassed),
+				ant.getLocation(),
+				this.timePassed);
 
 		switch (feramons.size())
 		{
 			case 0:
 				this.randomMovement(ant);
-			break;
+				break;
 			default:
 				ant.moveTo(map.get(feramons.get(0)));
 				this.updateBehaviour(ant);
@@ -163,9 +164,9 @@ public class Engine
 		});
 
 		this.feramonManager.layFeramon(
-			new Feramon(Feramon.Type.A, this.timePassed),
-			ant.getLocation(),
-			this.timePassed);
+				new Feramon(Feramon.Type.A, this.timePassed),
+				ant.getLocation(),
+				this.timePassed);
 
 		switch (feramons.size())
 		{
@@ -184,7 +185,7 @@ public class Engine
 		int x = RandomFactory.getRandomInteger();
 		x = x % 4;
 
-		switch(x)
+		switch (x)
 		{
 			case 0:
 				ant.moveStaticDown();
@@ -249,20 +250,20 @@ public class Engine
 	}
 
 	public void advance(long time)
+	{
+		for (int i = 0; i < time; i++)
 		{
-			for (int i = 0; i < time; i++)
-			{
-				this.advance();
-			}
+			this.advance();
 		}
+	}
 
-		public void advanceUntil(StopEvent stopEvent)
+	public void advanceUntil(StopEvent stopEvent)
+	{
+		while (!stopEvent.stop())
 		{
-			while (!stopEvent.stop())
-			{
-				advance();
-			}
+			advance();
 		}
+	}
 	// ----------------------------------------------------------------------------
 	// Section: Accessors
 	// ----------------------------------------------------------------------------
@@ -292,6 +293,11 @@ public class Engine
 		return arena;
 	}
 
+	public FeramonManager getFeramonManager()
+	{
+		return feramonManager;
+	}
+
 	public ArrayList<Food> getFood()
 	{
 		return this.food;
@@ -302,17 +308,22 @@ public class Engine
 		return this.hives;
 	}
 
+	public int getTimePassed()
+	{
+		return timePassed;
+	}
+
 	// ----------------------------------------------------------------------------
 	// Section: Fields
 	// ----------------------------------------------------------------------------
 
 	private Arena arena;
-	private ArrayList<Food> food = new ArrayList<Food>();
+	private ArrayList<Food> food  = new ArrayList<Food>();
 	private ArrayList<Hive> hives = new ArrayList<Hive>();
 
 	private FeramonManager feramonManager = new FeramonManager();
 
-	int timePassed = 0;
+	private int timePassed = 0;
 
 	// ----------------------------------------------------------------------------
 	// Section: Inner classes

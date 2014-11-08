@@ -47,7 +47,7 @@ public class FeramonManager
 	Map<Feramon.Type, Map<CustomPoint, Feramon>> map = new HashMap<Feramon.Type, Map<CustomPoint,
 			Feramon>>();
 
-	private class CustomPoint
+	public class CustomPoint
 	{
 		public CustomPoint(Point point)
 		{

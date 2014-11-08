@@ -44,6 +44,7 @@ public class AntSimulator
 			this.engine.advanceUntil(new FoodIsGone());
 
 			Visualiser visualiser = new Visualiser(this.engine, 1000, 500, Visualiser.Mode.Ants);
+			Visualiser visualiser2 = new Visualiser(this.engine, 1000, 500, Visualiser.Mode.Feramons);
 		}
 	}
 
