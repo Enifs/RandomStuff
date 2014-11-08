@@ -148,6 +148,10 @@ public class Engine
 		this.arena = arena;
 	}
 
+	public Arena getArena()
+	{
+		return arena;
+	}
 
 	public ArrayList<Food> getFood()
 	{
